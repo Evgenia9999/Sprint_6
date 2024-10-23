@@ -4,8 +4,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+<<<<<<< HEAD
 import static org.hamcrest.CoreMatchers.is;
 
+=======
+>>>>>>> 1c6eac9 (Parameterized tests were added and code coverage was updated)
 @RunWith(Parameterized.class)
 public class TestFelineParameterized {
 

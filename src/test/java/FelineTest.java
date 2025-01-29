@@ -6,9 +6,11 @@ import org.mockito.Mock;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class FelineTest {
 
-    @Mock
+
     private Feline feline;
 
     @Before
@@ -16,26 +18,27 @@ public class FelineTest {
 
     @Test
     public void eatMeatTest() throws Exception {
-        List<String> eat = feline.eatMeat();
-        List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        Assert.assertEquals(expected, eat);
+        Feline feline = new Feline();
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
+        List<String> actualFood = feline.eatMeat();
+        assertEquals(expectedFood, actualFood);
     }
 
     @Test
     public void getFamilyTest() {
-        Assert.assertEquals("Кошачьи", feline.getFamily());
+        assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
     public void getKittensTestWithNoParam() {
-        Assert.assertEquals(1, feline.getKittens());
+        assertEquals(1, feline.getKittens());
     }
 
     @Test
     public void getKittensTestWithParam() {
         int param = 3;
         int expectedKittens = feline.getKittens(param);
-        Assert.assertEquals(param, expectedKittens);
+        assertEquals(param, expectedKittens);
     }
 }
 
